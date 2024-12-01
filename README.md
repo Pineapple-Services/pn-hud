@@ -60,7 +60,7 @@ with:
 ```lua
 if item.status then
     if item.status.drunkenness then 
-        TriggerEvent("pn-hud:drunkness:updateStatus", "add", item.status.drunkenness)
+        TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
         return true
     end
     if client.setPlayerStatus then
@@ -93,33 +93,22 @@ Use the following format to add drunkenness to an item:
 
 ## Events and Exports
 
-The **pn-hud** supports several events and exports to manage custom HUD values. Below is a guide on how to use them:
-
-### Updating HUD Values
-
-You can update any custom HUD value using the following event:
+### Updating Drunkenness
 
 ```lua
-TriggerEvent("pn-hud:value:updateStatus", type, quantity)
+-- client side
+TriggerEvent("pn-hud:drunkenness:update", type, quantity)
 ```
-
-#### Parameters
-
 - **type:** `string` - `"add"` or `"remove"`
    - `"add"`: Increases the value.
    - `"remove"`: Decreases the value.
 - **quantity:** `number` - A numeric value that specifies how much to add or remove.
 
+#### Example Usage
+```lua
+-- adds 50% drunkenness
+TriggerEvent("pn-hud:drunkenness:update", "add", 50)
+-- removes 50% drunkenness
+TriggerEvent("pn-hud:drunkenness:update", "remove", 50)
+```
 ---
-
-### Example Usage
-
-#### Adding a Custom Value (e.g., Stamina)
-```lua
-TriggerEvent("pn-hud:value:updateStatus", "add", 50)
-```
-
-#### Removing a Custom Value (e.g., Thirst)
-```lua
-TriggerEvent("pn-hud:value:updateStatus", "remove", 20)
-```
