@@ -11,7 +11,7 @@ This guide provides instructions on how to configure **pn-hud**.
    - [Events and Exports](#events-and-exports)
    - [How to configure drunkenness?](#how-to-configure-drunkenness)
       - [Adding drunkenness to an item](#adding-drunkenness-to-an-item)
-3. [How to Add New HUD Values?](#how-to-add-new-hud-values)
+3. [Events and Exports](#events-and-exports)
 
 ---
 
@@ -29,7 +29,7 @@ This guide provides instructions on how to configure **pn-hud**.
 TriggerEvent("pn-hud:drunkness:updateStatus", type, quantity)
 ```
 
-- **type:** `string` - "add" / "remove"
+- **type:** `string` - `"add"` or `"remove"`
 - **quantity:** `number` - Value between 1 and 100
 
 ---
@@ -91,20 +91,35 @@ Use the following format to add drunkenness to an item:
 
 ---
 
-## How to Add New HUD Values?
+## Events and Exports
 
-To integrate new HUD values, follow these steps:
+The **pn-hud** supports several events and exports to manage custom HUD values. Below is a guide on how to use them:
 
-1. **Identify the Value**: Determine the HUD value you want to add (e.g., thirst, stamina).
-2. **Update Your Script**:
-   - Add the necessary logic to handle the new value.
-   - Trigger an event to update the HUD, similar to how drunkenness is handled.
-3. **Integrate with Inventory**:
-   - If you use `ox_inventory`, update the `status` property of your items to include the new value.
-   - Modify the inventory script to support the new value (e.g., as shown for drunkenness above).
-4. **Test**: Ensure the new value appears and updates correctly in the HUD.
+### Updating HUD Values
 
-Example:
+You can update any custom HUD value using the following event:
+
 ```lua
-TriggerEvent("pn-hud:newValue:updateStatus", "add", 50)
-``` 
+TriggerEvent("pn-hud:value:updateStatus", type, quantity)
+```
+
+#### Parameters
+
+- **type:** `string` - `"add"` or `"remove"`
+   - `"add"`: Increases the value.
+   - `"remove"`: Decreases the value.
+- **quantity:** `number` - A numeric value that specifies how much to add or remove.
+
+---
+
+### Example Usage
+
+#### Adding a Custom Value (e.g., Stamina)
+```lua
+TriggerEvent("pn-hud:value:updateStatus", "add", 50)
+```
+
+#### Removing a Custom Value (e.g., Thirst)
+```lua
+TriggerEvent("pn-hud:value:updateStatus", "remove", 20)
+```
