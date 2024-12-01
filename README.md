@@ -37,6 +37,9 @@ TriggerEvent("pn-hud:drunkenness:update", type, quantity)
 TriggerEvent("pn-hud:drunkenness:update", "add", 50)
 -- removes 50% drunkenness
 TriggerEvent("pn-hud:drunkenness:update", "remove", 50)
+
+-- gets drunkenness
+print(exports["pn-hud"]:GetDrunkenness())
 ```
 ---
 
