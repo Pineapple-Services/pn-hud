@@ -11,7 +11,6 @@ This guide provides instructions on how to configure **pn-hud**.
    - [Events and Exports](#events-and-exports)
    - [How to configure drunkenness?](#how-to-configure-drunkenness)
       - [Adding drunkenness to an item](#adding-drunkenness-to-an-item)
-3. [Events and Exports](#events-and-exports)
 
 ---
 
@@ -26,12 +25,19 @@ This guide provides instructions on how to configure **pn-hud**.
 ### Events and Exports
 
 ```lua
-TriggerEvent("pn-hud:drunkness:updateStatus", type, quantity)
+TriggerEvent("pn-hud:drunkenness:update", type, quantity)
 ```
 
 - **type:** `string` - `"add"` or `"remove"`
 - **quantity:** `number` - Value between 1 and 100
 
+#### Example Usage
+```lua
+-- adds 50% drunkenness
+TriggerEvent("pn-hud:drunkenness:update", "add", 50)
+-- removes 50% drunkenness
+TriggerEvent("pn-hud:drunkenness:update", "remove", 50)
+```
 ---
 
 ### How to Configure Drunkenness?
@@ -89,26 +95,4 @@ Use the following format to add drunkenness to an item:
 },
 ```
 
----
-
-## Events and Exports
-
-### Updating Drunkenness
-
-```lua
--- client side
-TriggerEvent("pn-hud:drunkenness:update", type, quantity)
-```
-- **type:** `string` - `"add"` or `"remove"`
-   - `"add"`: Increases the value.
-   - `"remove"`: Decreases the value.
-- **quantity:** `number` - A numeric value that specifies how much to add or remove.
-
-#### Example Usage
-```lua
--- adds 50% drunkenness
-TriggerEvent("pn-hud:drunkenness:update", "add", 50)
--- removes 50% drunkenness
-TriggerEvent("pn-hud:drunkenness:update", "remove", 50)
-```
 ---
