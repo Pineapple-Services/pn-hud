@@ -68,12 +68,12 @@ with:
 
 ```lua
 if item.status then
+    if client.setPlayerStatus then
+        client.setPlayerStatus(item.status)
+    end
     if item.status.drunkenness then 
         TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
         return true
-    end
-    if client.setPlayerStatus then
-        client.setPlayerStatus(item.status)
     end
 end
 ```
