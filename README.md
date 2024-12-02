@@ -73,6 +73,7 @@ if item.status then
     end
     if item.status.drunkenness then 
         TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
+        return true
     end
 end
 ```
