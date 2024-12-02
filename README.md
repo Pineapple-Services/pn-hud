@@ -69,7 +69,7 @@ with:
 ```lua
 			if item.status then
 				if item.status.drunkenness then
-					TriggerEvent("pn-hud:drunkness:update", "add", item.status.drunkenness)
+					TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
 					item.status.drunkenness = nil
 				end
 				if client.setPlayerStatus then
