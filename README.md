@@ -67,15 +67,15 @@ end
 with:
 
 ```lua
-if item.status then
-    if client.setPlayerStatus then
-        client.setPlayerStatus(item.status)
-    end
-    if item.status.drunkenness then 
-        TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
-        return true
-    end
-end
+			if item.status then
+				if item.status.drunkenness then
+					TriggerEvent("pn-hud:drunkness:update", "add", item.status.drunkenness)
+					item.status.drunkenness = nil
+				end
+				if client.setPlayerStatus then
+					client.setPlayerStatus(item.status)
+				end
+			end
 ```
 
 ---
