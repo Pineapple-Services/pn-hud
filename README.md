@@ -67,15 +67,16 @@ end
 with:
 
 ```lua
-			if item.status then
-				if item.status.drunkenness then
-					TriggerEvent("pn-hud:drunkenness:update", "add", item.status.drunkenness)
-					item.status.drunkenness = nil
-				end
-				if client.setPlayerStatus then
-					client.setPlayerStatus(item.status)
-				end
-			end
+if item.status then
+    local status = lib.table.deepclone(item.status)
+    if status.drunkenness then
+        TriggerEvent("pn-hud:drunkenness:update", "add", status.drunkenness)
+        status.drunkenness = nil
+    end
+    if client.setPlayerStatus then
+        client.setPlayerStatus(status)
+    end
+end
 ```
 
 ---
