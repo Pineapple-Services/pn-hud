@@ -120,6 +120,6 @@ TriggerEvent("pn-hud:stress:update", "add", 50)
 -- removes 50% stress
 TriggerEvent("pn-hud:stress:update", "remove", 50)
 
--- gets drunkenness
+-- gets stress
 print(exports["pn-hud"]:GetStress())
 ```
