@@ -100,3 +100,25 @@ Use the following format to add drunkenness to an item:
 ```
 
 ---
+
+## Stress
+
+### Events and Exports
+
+```lua
+TriggerEvent("pn-hud:stress:update", type, quantity)
+```
+
+- **type:** `string` - `"add"` or `"remove"`
+- **quantity:** `number` - Value between 1 and 100
+
+#### Example Usage
+```lua
+-- adds 50% stress
+TriggerEvent("pn-hud:stress:update", "add", 50)
+-- removes 50% stress
+TriggerEvent("pn-hud:stress:update", "remove", 50)
+
+-- gets drunkenness
+print(exports["pn-hud"]:GetStress())
+```
