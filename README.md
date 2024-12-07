@@ -11,6 +11,8 @@ This guide provides instructions on how to configure **pn-hud**.
    - [Events and Exports](#events-and-exports)
    - [How to configure drunkenness?](#how-to-configure-drunkenness)
       - [Adding drunkenness to an item](#adding-drunkenness-to-an-item)
+3. [Stress](#stress)
+   - [Events and Exports](#events-and-exports)
 
 ---
 
