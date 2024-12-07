@@ -10,9 +10,8 @@ This guide provides instructions on how to configure **pn-hud**.
 2. [Drunkenness](#drunkenness)
    - [Events and Exports](#events-and-exports)
    - [How to configure drunkenness?](#how-to-configure-drunkenness)
-      - [Adding drunkenness to an item](#adding-drunkenness-to-an-item)
 3. [Stress](#stress)
-   - [Events and Exports](#events-and-exports)
+   - [Events and Exports](#Events-and-Exports-Stress)
 
 ---
 
@@ -105,7 +104,7 @@ Use the following format to add drunkenness to an item:
 
 ## Stress
 
-### Events and Exports
+### Events and Exports Stress
 
 ```lua
 TriggerEvent("pn-hud:stress:update", type, quantity)
